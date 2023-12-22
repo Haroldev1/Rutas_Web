@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return ('Esta es la pagina principal');
 });
 
 # Creando nuestras rutas
@@ -22,6 +22,22 @@ Route::get('/', function () {
 # get ('nombre de la ruta', funcionamiento)
 Route::get('administracion', function () {
     return "Esta es la pagina para administrar";
+});
+
+Route::get('administracion/reporte', function(){
+    return "Aca se vera las dos opciones de reportes que el administrador podra observar";
+});
+
+Route::get('administracion/reporte/venta', function(){
+    return "Aca se vera el reporte de todas las ventas hechas cada cierto tiempo";
+});
+
+Route::get('administracion/reporte/compras', function () {
+    return "Aca se vera el reporte de todos los productos comprados cada cierto tiempo";
+});
+
+Route::get('administracion/almacen', function () {
+    return "Aca se vera el reporte de todos los productos comprados cada cierto tiempo";
 });
 
 Route::get('mi-perfil', function () {
@@ -40,8 +56,12 @@ Route::get('login', function () {
     return "Esta es la pagina para ingresar";
 });
 
+Route::get('login/recuperar-contraseña', function(){
+    return "Aqui ira la pagina para recuperar la contrasela, que se llevara acabo desde un formulario.";
+});
+
 Route::get('registro', function () {
-    return "Esta es la pagina para registrarse";
+    return "Esta es la pagina para rellenar el formulario para registrarse";
 });
 
 Route::get('reclamos', function () {
@@ -66,18 +86,6 @@ Route::get('catalogo', function () {
 
 Route::get('producto/{id}', function ($id) {
     return "Esta es la pagina para ver a mejor vista cada producto, por ejemplo este es el producto a mas detalles, producto: $id";
-});
-
-Route::get('reporte', function(){
-    return "Aca se vera las dos opciones de reportes que el administrador podra observar";
-});
-
-Route::get('reporte/venta', function(){
-    return "Aca se vera el reporte de todas las ventas hechas cada cierto tiempo";
-});
-
-Route::get('reporte/compras', function () {
-    return "Aca se vera el reporte de todos los productos comprados cada cierto tiempo";
 });
 
 #No importa si el nombre es igual ya que la diferencia empieza en el verbo "POST" y "GET"
